@@ -2,7 +2,6 @@ const handle = async ctx => {
     const cfConfig = ctx.getConfig('picBed.cloudflare')
     const imageList = ctx.output
     for (const img of imageList) {
-        ctx.log.info(img.fileName)
         let image = img.buffer
         if (!image && img.base64Image) {
             image = Buffer.from(img.base64Image, 'base64')
